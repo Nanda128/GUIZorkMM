@@ -9,6 +9,7 @@ using namespace std;
 
 class Character {
     friend class MainWindow;
+    //Friendship!
 
 private:
     string description;

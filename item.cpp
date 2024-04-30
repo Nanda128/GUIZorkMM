@@ -26,7 +26,7 @@ bool Item::operator==(Item &i)
     }
 
     return test;
-}
+} //Operator Overloading!
 
 void Item::setWeight(int inWeightGrams)
 {
