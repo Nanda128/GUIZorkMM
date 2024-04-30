@@ -164,7 +164,8 @@ void MainWindow::endGameState(string message1, string message2)
     ui->viewRoomItems->setEnabled(false);
     ui->viewCharItems->setEnabled(false);
     ui->listWidget->setEnabled(false);
-
+    ui->selectSuspect1->setEnabled(false);
+    ui->selectSuspect2->setEnabled(false);
     ui->mainConsole->setText(QString::fromStdString(character.description + " has " + message1 + ". You have " + message2 + " the game.\n"));
 
     character.stamina = 0;

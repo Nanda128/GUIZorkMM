@@ -26,10 +26,10 @@ void ZorkUL::createRooms() {
     SubmissionRoom = new Room("SubmissionRoom");
 
 //             (N, E, S, W)
-    Bedroom->setExits(Garage, Suspect1BR, LivingRoom, Suspect2BR);
+    Bedroom->setExits(Garage, Suspect1BR, LivingRoom, NULL);
     Suspect1BR->setExits(NULL, NULL, NULL, Bedroom);
-    Suspect2BR->setExits(NULL, Bedroom, NULL, NULL);
-    LivingRoom->setExits(Bedroom, NULL, SubmissionRoom, NULL);
+    Suspect2BR->setExits(NULL, NULL, NULL, LivingRoom);
+    LivingRoom->setExits(Bedroom, Suspect2BR, SubmissionRoom, NULL);
     SubmissionRoom->setExits(NULL, NULL, NULL, NULL);
     Garage->setExits(NULL, NULL, Bedroom, NULL);
 
@@ -61,16 +61,16 @@ string ZorkUL::teleport() {
 }
 string ZorkUL::map() {
     string output;
-    output += "\n                        [Garage]                         ";
-    output += "\n                            |                            ";
-    output += "\n                            |                            ";
-    output += "\n [Suspect 2's Room] --- [Bedroom] --- [Suspect 1's Room] ";
-    output += "\n                            |                            ";
-    output += "\n                            |                            ";
-    output += "\n                      [Living Room]                      ";
-    output += "\n                            |                            ";
-    output += "\n                            |                            ";
-    output += "\n                     [Submission Room]                   ";
+    output += "\n                       [Garage]                         ";
+    output += "\n                           |                            ";
+    output += "\n                           |                            ";
+    output += "\n                       [Bedroom] --- [Suspect 1's Room] ";
+    output += "\n                           |                            ";
+    output += "\n                           |                            ";
+    output += "\n                    [Living Room] --- [Suspect 2's Room]";
+    output += "\n                           |                            ";
+    output += "\n                           |                            ";
+    output += "\n                    [Submission Room]                   ";
     return output;
 }
 
