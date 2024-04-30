@@ -22,7 +22,7 @@ void ZorkUL::createRooms() {
     LivingRoom = new Room("LivingRoom");
         LivingRoom->addItem(new Item("Victim's Laptop", "Oh god, the victim's a Warhammer player. Maybe he had it coming", 2, 22));
     Garage = new Room("Garage");
-        Garage->addItem(new Item("The Victim's Car", "This is a car that belonged to the victim. Attempting to lift it will instantly overencumber you", 9998, 66));
+        Garage->addItem(new Item("The Victim's Car. Attempting to lift it will instantly overencumber you", "This is a car that belonged to the victim. ", 9998, 66));
     SubmissionRoom = new Room("SubmissionRoom");
 
 //             (N, E, S, W)
@@ -61,16 +61,16 @@ string ZorkUL::teleport() {
 }
 string ZorkUL::map() {
     string output;
-    output += "\n                       [Garage]                         ";
-    output += "\n                           |                            ";
-    output += "\n                           |                            ";
-    output += "\n                       [Bedroom] --- [Suspect 1's Room] ";
-    output += "\n                           |                            ";
-    output += "\n                           |                            ";
-    output += "\n                    [Living Room] --- [Suspect 2's Room]";
-    output += "\n                           |                            ";
-    output += "\n                           |                            ";
-    output += "\n                    [Submission Room]                   ";
+    output += "\n [Garage]                            ";
+    output += "\n |                                   ";
+    output += "\n |                                   ";
+    output += "\n [Bedroom] --- [Suspect 1's Room]    ";
+    output += "\n |                                   ";
+    output += "\n |                                   ";
+    output += "\n [Living Room] --- [Suspect 2's Room]";
+    output += "\n |                                   ";
+    output += "\n |                                   ";
+    output += "\n [Submission Room]                   ";
     return output;
 }
 
