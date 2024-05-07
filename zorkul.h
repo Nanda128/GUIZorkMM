@@ -10,8 +10,6 @@
 #include <vector>
 using namespace std;
 
-int health = 100;
-
 class ZorkUL {
 private:
     Room *currentRoom;

@@ -11,6 +11,7 @@ private:
 public:
     gameException(const std::string& msg) : message(msg) {}
 
+    //Virtual Member Function
     virtual const char* what() const noexcept override {
         return message.c_str();
     }

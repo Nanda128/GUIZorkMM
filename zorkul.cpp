@@ -5,6 +5,8 @@
 using namespace std;
 #include "zorkul.h"
 
+int health = 100;
+
 ZorkUL::ZorkUL() {
     createRooms();
     srand(time(0));
@@ -81,15 +83,19 @@ string ZorkUL::go(string direction) {
         return "You can't go that way.";
     } else {
         currentRoom = nextRoom;
-        // TODO: Random 1 in 4 chance that the user's health(global variable) is decreased by 10 points
-        return currentRoom->longDescription();
+        string response = "";
+        int randomNumber = rand() % 4 + 1;
+        if (randomNumber == 1) {
+            health -= 10;
+            response += "You tripped and fell! -10 health. \n";
+            if(health == 0)
+            {health = 100;
+                response += "After falling too many times, you've had to tuck in to your emergency panadol supply. Restore health to 100. Side effects include... \n";
+            }
+        }
+        response += currentRoom->longDescription();
+        return response;
     }
-}
-
-int roll(int min, int max)
-{   double x = rand()/static_cast<double>(RAND_MAX+1);
-    int ans= min + static_cast<int>( x * (max - min) );
-    return ans;
 }
 
 string ZorkUL::viewItems() {
