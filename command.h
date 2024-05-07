@@ -15,6 +15,8 @@ public:
     string getSecondWord();
     bool isUnknown();
     bool hasSecondWord();
+    virtual void virtFunction() = 0; //Pure Virtual Function that makes it incomplete and not instantiated
+    //Should make command an abstract class
 };
 
 #endif /*COMMAND_H_*/

@@ -5,7 +5,7 @@
 using namespace std;
 #include "zorkul.h"
 
-int health = 100;
+int health = 100; //Global Variable!
 
 ZorkUL::ZorkUL() {
     createRooms();
