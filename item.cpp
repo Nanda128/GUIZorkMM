@@ -4,15 +4,15 @@ Item::Item(string description, string longDescription, int weightGrams, float va
 {
     this->description = description;
     this->longDescription = longDescription;
-    this->weightGrams = weightGrams;
+    this->weight.intValue = weightGrams;
     this->value = value;
 }
 
 Item::Item(string description)
 {
     this->description = description;
-    this->longDescription = longDescription;
-    this->weightGrams = 1;
+    this->longDescription = "No long description provided";
+    this->weight.intValue = 1; // Default weight
     this->value = 1;
 }
 
@@ -32,10 +32,18 @@ void Item::setWeight(int inWeightGrams)
 {
     if (inWeightGrams > 9999 || inWeightGrams < 0)
     {
-       cout << "Weight invalid, must be 0 < Weight < 9999." ;
+        std::cout << "Weight invalid, must be 0 < Weight < 9999." ;
     } else {
-        weightGrams = inWeightGrams;
+        weight.intValue = inWeightGrams;
     }
+}
+
+void Item::setWeight(float inWeightGrams)
+{
+    if (inWeightGrams > 9999 || inWeightGrams < 0)
+        std::cout << "Weight invalid, must be 0 < Weight < 9999." ;
+    else
+        weight.floatValue = inWeightGrams;
 }
 
 void Item::setValue(float inValue)
@@ -48,7 +56,12 @@ void Item::setValue(float inValue)
 
 int Item::getWeight()
 {
-    return weightGrams;
+    return weight.intValue;
+}
+
+float Item::getWeightfloat()
+{
+    return weight.floatValue;
 }
 
 string Item::getShortDescription()

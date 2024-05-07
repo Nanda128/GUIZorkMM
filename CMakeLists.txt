@@ -24,6 +24,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         character.cpp character.h command.cpp command.h commandwords.cpp commandwords.h item.cpp item.h README.md room.cpp room.h zorkul.cpp zorkul.h
+        GameException.cpp
+        gameException.h
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET GUIZork-MM APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

@@ -208,9 +208,9 @@
    <widget class="QPushButton" name="selectSuspect2">
     <property name="geometry">
      <rect>
-      <x>319</x>
+      <x>309</x>
       <y>300</y>
-      <width>281</width>
+      <width>291</width>
       <height>31</height>
      </rect>
     </property>

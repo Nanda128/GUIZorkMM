@@ -1,5 +1,7 @@
+#include "gameexception.h"
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "zorkul.h"
 #include <algorithm>
 
 template <typename T>
@@ -167,6 +169,13 @@ void MainWindow::endGameState(string message1, string message2)
     ui->selectSuspect1->setEnabled(false);
     ui->selectSuspect2->setEnabled(false);
     ui->mainConsole->setText(QString::fromStdString(character.description + " has " + message1 + ". You have " + message2 + " the game.\n"));
+
+    if(message2=="won")
+    {throw gameException("You win!");
+    }
+    else if(message2=="lost")
+    {throw gameException("You lose!");
+    }
 
     character.stamina = 0;
     ui->staminaDisplay->setText(QString::fromStdString(displayStamina()));

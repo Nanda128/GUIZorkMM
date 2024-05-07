@@ -50,6 +50,7 @@ private slots:
     void on_listWidget_itemDoubleClicked(QListWidgetItem *item);
     void on_selectSuspect1_clicked();
     void on_selectSuspect2_clicked();
+    void on_healthButton_clicked();
 };
 
 #endif

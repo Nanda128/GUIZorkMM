@@ -81,9 +81,17 @@ string ZorkUL::go(string direction) {
         return "You can't go that way.";
     } else {
         currentRoom = nextRoom;
+        // TODO: Random 1 in 4 chance that the user's health(global variable) is decreased by 10 points
         return currentRoom->longDescription();
     }
 }
+
+int roll(int min, int max)
+{   double x = rand()/static_cast<double>(RAND_MAX+1);
+    int ans= min + static_cast<int>( x * (max - min) );
+    return ans;
+}
+
 string ZorkUL::viewItems() {
     return currentRoom->displayItems();
 }
