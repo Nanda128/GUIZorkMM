@@ -4,14 +4,14 @@
 #include <exception>
 #include <string>
 
+template<typename MessageT>
 class gameException : public std::exception {
 private:
-    std::string message;
+    MessageT message;
 
 public:
-    gameException(const std::string& msg) : message(msg) {}
+    gameException(const MessageT& msg) : message(msg) {}
 
-    //Virtual Function
     virtual const char* what() const noexcept override {
         return message.c_str();
     }

@@ -20,9 +20,9 @@ COMPLETED:
 --Abstract classes-- :Ln 18, command.h
 --Namespaces-- :Ln 9, mainwindow.h
 --Bit structures-- :Ln 27, mainwindow.h
+--Template classes-- :Ln 7, gameException.h
 
 TODO:
 
-template classes
 Multiple inheritance
 Copy constructors (deep , shallow copy)
