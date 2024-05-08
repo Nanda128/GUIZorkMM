@@ -21,8 +21,6 @@ public:
     int numberOfItems();
     Room(string description);
     void setExits(Room *north, Room *east, Room *south, Room *west);
-    virtual void virtFunction() = 0; //Pure Virtual Function that makes it incomplete and not instantiated
-    //Should make Room an abstract class
     //map<string, Room*> getExits();
     string shortDescription();
     string longDescription();

@@ -18,11 +18,11 @@ COMPLETED:
 --Private, Public, Protected--
 --Advanced pre-processor directives--
 --Abstract classes-- :Ln 18, command.h
+--Namespaces-- :Ln 9, mainwindow.h
+--Bit structures-- :Ln 27, mainwindow.h
 
 TODO:
 
 template classes
 Multiple inheritance
-namespaces
 Copy constructors (deep , shallow copy)
-Bit structures

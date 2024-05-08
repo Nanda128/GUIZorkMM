@@ -6,7 +6,7 @@
 #include "zorkul.h"
 #include "character.h"
 
-namespace Ui {
+namespace Ui { //Namespaces!
     class MainWindow;
 }
 
@@ -24,7 +24,10 @@ public:
     void disableAllButtons();
     void addItemsToListWidget(vector<Item> item);
     string displayStamina();
-    bool endOfGame = false;
+    struct GameStatus { //Bit Structures!
+        bool EndGame : 1;
+        bool OnGoing : 1;
+    } gameStatus;
     void printCharacterStats();
     void endGameState(string message1, string message2);
 

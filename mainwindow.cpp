@@ -14,6 +14,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 {
     ui->setupUi(this);
     ui->staminaDisplay->setTextColor(QColor("green"));
+    gameStatus.EndGame=0;
+    gameStatus.OnGoing=1;
     ui->selectSuspect1->setEnabled(false);
     ui->selectSuspect2->setEnabled(false);
     ui->mainConsole->append(QString::fromStdString(zork->printWelcome() + "\n"));
@@ -80,15 +82,17 @@ void MainWindow::on_viewCharItems_clicked()
 
 void MainWindow::on_selectSuspect1_clicked(){
     //User clicked Suspect 1 Button and lost
-    if(endOfGame==true)
-    {endGameState("selected the wrong suspect", "lost");
+    if(gameStatus.EndGame)
+    {
+        endGameState("selected the wrong suspect", "lost");
     }
 }
 
 void MainWindow::on_selectSuspect2_clicked(){
     //User clicked Suspect 2 Button and won
-    if(endOfGame==true)
-    {endGameState("selected the correct suspect", "won");
+    if(gameStatus.EndGame)
+    {
+        endGameState("selected the correct suspect", "won");
     }
 }
 
@@ -116,7 +120,7 @@ void MainWindow::on_listWidget_itemDoubleClicked(QListWidgetItem*item)
         Room r = zork->getCurrentRoom();
         addItem(r.itemsInRoom, m);
         character.removeItem(m);
-        ui->mainConsole->append(QString::fromStdString(description + " has been removed from yuor inventory.\n"));
+        ui->mainConsole->append(QString::fromStdString(description + " has been removed from your inventory.\n"));
     }
 }
 
@@ -171,10 +175,10 @@ void MainWindow::endGameState(string message1, string message2)
     ui->mainConsole->setText(QString::fromStdString(character.description + " has " + message1 + ". You have " + message2 + " the game.\n"));
 
     if(message2=="won")
-    {throw gameException("You win!");
+    {throw gameException(character.description + " has " + message1 + ". You have won the game.\n");
     }
     else if(message2=="lost")
-    {throw gameException("You lose!");
+    {throw gameException(character.description + " has " + message1 + ". You have lost the game.\n");
     }
 
     character.stamina = 0;
@@ -205,7 +209,8 @@ void MainWindow::goRoom(string direction)
             ui->mainConsole->append(QString::fromStdString(zork->go(direction) + "\n"));
 
             if (zork->getCurrentRoom().description == "SubmissionRoom")
-            {   endOfGame = true; //Making sure the user doesn't activate the buttons if they're not in SubmissionRoom
+            {   gameStatus.EndGame = true;
+                gameStatus.OnGoing = false;//Making sure the user doesn't activate the buttons if they're not in SubmissionRoom
                 ui->selectSuspect1->setEnabled(true);
                 ui->selectSuspect2->setEnabled(true);
                 ui->mainConsole->setText(QString::fromStdString("So, who do you think it is? Hit the button on the bottom left if its Suspect 1, or the button in bottom right if its Suspect 2."));
@@ -244,7 +249,7 @@ string MainWindow::displayStamina()
 
 void MainWindow::printCharacterStats()
 {
-    if (!(character.stamina > 0))
+    if (!(character.stamina > 0 && gameStatus.OnGoing))
     {
         endGameState("run out of stamina", "lost");
     }
