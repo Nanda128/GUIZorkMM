@@ -35,3 +35,20 @@ string CommandWords::showAll() {
 
     return output;
 }
+
+void CommandWords::demonstrateMultipleInheritance() {
+    // Accessing methods inherited from the Item class
+    Item bathrobe("Victim's Bathrobe", "Smells like fish.", 150, 50.0);
+    std::cout << "Item description: " << bathrobe.getShortDescription() << std::endl;
+    std::cout << "Item weight: " << bathrobe.getWeight() << " grams" << std::endl;
+
+    // Accessing methods inherited from the Character class
+    Character character("Detecive's Assistant Intern");
+    character.addItem("Comically large glasses");
+    std::vector<Item> items = character.viewItems();
+    std::cout << "Character's items: ";
+    for (const auto& item : items) {
+        std::cout << character.longDescription() << ", ";
+    }
+    std::cout << std::endl;
+}

@@ -21,8 +21,8 @@ COMPLETED:
 --Namespaces-- :Ln 9, mainwindow.h
 --Bit structures-- :Ln 27, mainwindow.h
 --Template classes-- :Ln 7, gameException.h
+--Multiple inheritance-- :Ln 11, commandwords.h
 
 TODO:
 
-Multiple inheritance
 Copy constructors (deep , shallow copy)
