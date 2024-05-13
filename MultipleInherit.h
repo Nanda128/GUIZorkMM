@@ -3,10 +3,12 @@
 
 #include "character.h"
 #include "item.h"
-#include <vector>
 
 class MultipleInherit : public Character, public Item {
 public:
+    MultipleInherit(string characterDescription, string itemDescription, string itemLongDescription, int itemWeightGrams, float itemValue) :
+    Character(characterDescription),
+    Item(itemDescription, itemLongDescription, itemWeightGrams, itemValue) {}
     void demonstrateMultipleInheritance();
 };
 

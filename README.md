@@ -31,4 +31,4 @@ The game's end states are:
 - If the user's stamina runs out
 - If the user selects Suspect 1 in SubmissionRoom.
 
-The winning state is when the player enters the "SubmissionRoom" room and selects Suspect 1.
+The winning state is when the player enters the "SubmissionRoom" room and selects Suspect 2.

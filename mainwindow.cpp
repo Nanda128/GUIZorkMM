@@ -1,6 +1,8 @@
 #include "gameexception.h"
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "AbstractClass.h"
+#include "MultipleInherit.h"
 #include "zorkul.h"
 #include <algorithm>
 
@@ -96,18 +98,20 @@ void MainWindow::on_selectSuspect2_clicked(){
     }
 }
 
+void MainWindow::on_multipleButton_clicked(){
+    MultipleInherit multipleInherit("Detective's Assistant", "Victim's Bathrobe", "Smells like fish", 1, 2.0);
+    multipleInherit.demonstrateMultipleInheritance();
+}
+
 void MainWindow::on_listWidget_itemDoubleClicked(QListWidgetItem*item)
 {
     string description = item->text().toStdString();
     Item i = *new Item(description);
     ui->listWidget->takeItem(ui->listWidget->row(item));
-    //delete item;
-
     if (putInInventory)
     {
         Room r = zork->getCurrentRoom();
         Item m = r.findItem(i);
-        //character.itemsInCharacter.push_back(m);
         addItem(character.itemsInCharacter, m);
         character.addItem(&m);
         r.removeItem(m);

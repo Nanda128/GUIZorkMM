@@ -1,4 +1,6 @@
 #include "multipleinherit.h"
+#include "character.h"
+#include "item.h"
 #include <iostream>
 
 void MultipleInherit::demonstrateMultipleInheritance() {
