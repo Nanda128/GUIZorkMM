@@ -8,7 +8,7 @@ void MultipleInherit::demonstrateMultipleInheritance() {
     Character assistant("Detective's Assistant");
 
     // Accessing methods inherited from the Item class
-    Item bathrobe("Victim's Bathrobe", "Smells like fish.", 1, 50.0);
+    Item bathrobe("Victim's Bathrobe", "Smells like fish", 1, 50.0);
     std::cout << "Item description: " << bathrobe.getShortDescription() << std::endl;
     std::cout << "Item weight: " << bathrobe.getWeight() << " grams" << std::endl;
     assistant.addItem(bathrobe);

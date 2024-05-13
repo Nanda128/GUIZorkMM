@@ -99,7 +99,7 @@ void MainWindow::on_selectSuspect2_clicked(){
 }
 
 void MainWindow::on_multipleButton_clicked(){
-    MultipleInherit multipleInherit("Detective's Assistant", "Victim's Bathrobe", "Smells like fish", 1, 2.0);
+    MultipleInherit multipleInherit("placeholder", "placeholder", "placeholder", 1, 2.0);
     multipleInherit.demonstrateMultipleInheritance();
 }
 
