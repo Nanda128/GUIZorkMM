@@ -23,7 +23,19 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(GUIZork-MM
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        character.cpp character.h item.cpp item.h README.md room.cpp room.h zorkul.cpp zorkul.h
+        MultipleInherit.h
+        MultipleInherit.cpp
+        AbstractClass.h
+
+        character.cpp
+        character.h
+        item.cpp
+        item.h
+        README.md
+        room.cpp
+        room.h
+        zorkul.cpp
+        zorkul.h
         gameException.cpp
         gameException.h
         RequiredFeatures.txt

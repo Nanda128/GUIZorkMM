@@ -21,8 +21,8 @@ COMPLETED:
 --Bit structures-- :Ln 27, mainwindow.h
 --Template classes-- :Ln 9, gameException.h
 --Multiple Inheritance-- :Ln 10, gameException.h
+--Abstract Classes--
 
 TODO:
 
-Abstract Classes
 Copy constructors (deep , shallow copy)

@@ -6,20 +6,15 @@
 #include "character.h"
 #include "item.h"
 
-template<typename MessageT> //Template Classes!
-class gameException : public Character, public Item, public std::exception { //Multiple Inheritance!
+template<typename MessageT>
+class gameException : public std::exception {
 private:
     MessageT message;
 
 public:
-    gameException(const MessageT& msg) : message(msg) {}
+    gameException(const MessageT& msg);
 
-    virtual const char* what() const noexcept override {
-        return message.c_str();
-    }
-    void demonstrateMultipleInheritance();
+    virtual const char* what() const noexcept override;
 };
-
-#include "gameException.h"
 
 #endif

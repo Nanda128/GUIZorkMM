@@ -91,8 +91,8 @@ void Character::removeItem(Item item) {
     itemsInCharacter.erase(itemsInCharacter.begin() + findItemPos(item));
 }
 
-//maxWeight = 10.0g
-//Checks if weight of all held items > max weight
+// maxWeight = 10.0g
+// Checks if weight of all held items > max weight
 // Test this out by going to Garage and taking the victim's car
 bool Character::isOverencumbered(float maxWeight)
 {
