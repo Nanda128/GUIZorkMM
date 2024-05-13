@@ -1,8 +1,6 @@
 #ifndef ZORKUL_H_
 #define ZORKUL_H_
 
-#include "command.h"
-//#include "parser.h"
 #include "room.h"
 #include "item.h"
 #include <iostream>
@@ -15,8 +13,6 @@ private:
     Room *currentRoom;
     vector<Room> rooms;
     void createRooms();
-    bool processCommand(Command command);
-    void goRoom(Command command);
     void createItems();
     void displayItems();
 

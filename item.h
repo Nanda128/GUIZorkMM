@@ -9,7 +9,7 @@ using namespace std;
 union Weight {
     int intValue;
     float floatValue;
-};//Unions
+};//Unions!
 
 class Item{
 private:
@@ -22,7 +22,6 @@ public:
     Item();
     Item(string description, string longDescription, int weightGrams, float value);
     Item(string description);
-    //Item operator==(const Item& i);
     string getShortDescription();
     bool operator==(Item &i);
     string getLongDescription();
@@ -43,4 +42,4 @@ public:
     }
 };
 
-#endif /*ITEM_H_*/
+#endif

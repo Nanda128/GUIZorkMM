@@ -17,12 +17,12 @@ COMPLETED:
 --Global variables-- :Ln 8, zorkul.cpp
 --Private, Public, Protected--
 --Advanced pre-processor directives--
---Abstract classes-- :Ln 18, command.h
 --Namespaces-- :Ln 9, mainwindow.h
 --Bit structures-- :Ln 27, mainwindow.h
---Template classes-- :Ln 7, gameException.h
---Multiple inheritance-- :Ln 11, commandwords.h
+--Template classes-- :Ln 9, gameException.h
+--Multiple Inheritance-- :Ln 10, gameException.h
 
 TODO:
 
+Abstract Classes
 Copy constructors (deep , shallow copy)
