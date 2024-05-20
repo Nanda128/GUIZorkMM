@@ -86,11 +86,12 @@ string ZorkUL::go(string direction) {
         string response = "";
         int randomNumber = rand() % 4 + 1;
         if (randomNumber == 1) {
-            health -= 10;
+            ::health -= 10;
             response += "You tripped and fell! -10 health. \n";
-            if(health == 0)
-            {health = 100;
-                response += "After falling too many times, you've had to tuck in to your emergency panadol supply. Restore health to 100. Side effects include... \n";
+            if(::health == 0)
+            {::health = 100;
+                response += "After falling too many times, you've had to tuck in to your emergency panadol supply.\n"
+                            "Restore health to 100. Side effects include... \n";
             }
         }
         response += currentRoom->longDescription();

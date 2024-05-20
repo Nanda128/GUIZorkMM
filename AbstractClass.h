@@ -25,6 +25,6 @@ public:
  *   // AbstractClass obj;
  *    return 0;
  * }
- * This line will cause a compilation error because you can't create an instance of an abstract class
+ * This code will cause a compilation error because you can't create an instance of an abstract class
 */
 #endif
