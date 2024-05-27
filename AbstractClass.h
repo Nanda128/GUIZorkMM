@@ -15,7 +15,6 @@ public:
         std::cout << "This is an abstract class." << std::endl;
     }
     virtual ~AbstractClass() {}
-    void demonstrateMultipleInheritance();
 };
 
 /*Create an AbstractClass.cpp file with the following code;

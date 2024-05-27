@@ -3,6 +3,7 @@
 #include "ui_mainwindow.h"
 #include "AbstractClass.h"
 #include "MultipleInherit.h"
+#include "ConstrExample.h"
 #include "zorkul.h"
 #include <algorithm>
 
@@ -101,6 +102,10 @@ void MainWindow::on_selectSuspect2_clicked(){
 void MainWindow::on_multipleButton_clicked(){
     MultipleInherit multipleInherit("placeholder", "placeholder", "placeholder", 1, 2.0);
     multipleInherit.demonstrateMultipleInheritance();
+}
+
+void MainWindow::on_constrExamplebutton_clicked(){
+    ConstrExample::driver();
 }
 
 void MainWindow::on_listWidget_itemDoubleClicked(QListWidgetItem*item)

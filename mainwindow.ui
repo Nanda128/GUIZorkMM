@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>618</width>
-    <height>377</height>
+    <width>608</width>
+    <height>414</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -229,6 +229,19 @@
     </property>
     <property name="text">
      <string>Demonstrate Multiple Inheritance(Check Terminal)</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="constrExamplebutton">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>380</y>
+      <width>591</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Demonstrate Deep and Shallow Copy Constructors (Check Terminal)</string>
     </property>
    </widget>
   </widget>

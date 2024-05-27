@@ -40,6 +40,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         gameException.h
         RequiredFeatures.txt
         main.cpp
+        ConstrExample.h
+        ConstrExample.cpp
 
     )
 # Define target properties for Android with Qt 6 as:

@@ -124,6 +124,6 @@ void Character::decrementStamina()
 
     if (stamina < 0)
     {
-        setStamina(10);
+        setStamina(15);
     }
 }

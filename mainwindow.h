@@ -54,6 +54,7 @@ private slots:
     void on_selectSuspect1_clicked();
     void on_selectSuspect2_clicked();
     void on_multipleButton_clicked();
+    void on_constrExamplebutton_clicked();
 };
 
 #endif
