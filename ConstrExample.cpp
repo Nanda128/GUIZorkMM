@@ -4,7 +4,7 @@
 ConstrExample::ConstrExample(int s) : size(s), data(new int[s]) {
     for (int i = 0; i < s; ++i) {
         data[i] = i + 1; // Placeholder Values
-    }
+    } // 1 2 3 4 5
     std::cout << "Constructor called. Data initialized.\n";
 }
 

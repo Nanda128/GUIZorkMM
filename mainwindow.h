@@ -30,6 +30,7 @@ public:
     } gameStatus;
     void printCharacterStats();
     void endGameState(string message1, string message2);
+    void cleanupResources();
 
 private:
     Ui::MainWindow *ui;

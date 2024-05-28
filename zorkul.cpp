@@ -1,5 +1,6 @@
 #include <iostream>
 #include <ctime>
+#warning "One more time just for good measure!"
 #include <cstdlib>
 
 using namespace std;
@@ -11,20 +12,25 @@ ZorkUL::ZorkUL() {
     createRooms();
     srand(time(0));
 }
+
+ZorkUL::~ZorkUL() {
+    rooms.clear();
+}
+
 void ZorkUL::createRooms() {
     Room *Bedroom, *Suspect1BR, *Suspect2BR, *LivingRoom, *SubmissionRoom, *Garage;
 
     Bedroom = new Room("Bedroom");
-        Bedroom->addItem(new Item("Coroner's Report", "Wow this report is unreadable, It's probably not relevant", 1, 11));
-        Bedroom->addItem(new Item("Calling Card","A card left by the perp, mocking you. Distinct Handwriting", 2, 55));
+        Bedroom->addItem(new Item("Coroner's Report", "Wow this report is unreadable, It's probably not relevant", 1));
+        Bedroom->addItem(new Item("Calling Card","A card left by the perp, mocking you. Distinct Handwriting", 2));
     Suspect1BR = new Room("Suspect1BR");
-        Suspect1BR->addItem(new Item("Suspect 1's Diary", "A diary that belongs to Suspect 1. Handwriting doesn't match the Calling Card", 1, 33));
+        Suspect1BR->addItem(new Item("Suspect 1's Diary", "A diary that belongs to Suspect 1. Handwriting doesn't match the Calling Card", 1));
     Suspect2BR = new Room("Suspect2BR");
-        Suspect2BR->addItem(new Item("Suspect 2's Diary", "A diary that belongs to Suspect 2. Handwriting does match the Calling Card. This was easy", 1, 44));
+        Suspect2BR->addItem(new Item("Suspect 2's Diary", "A diary that belongs to Suspect 2. Handwriting does match the Calling Card. This was easy", 1));
     LivingRoom = new Room("LivingRoom");
-        LivingRoom->addItem(new Item("Victim's Laptop", "Oh god, the victim's a Warhammer player. Maybe he had it coming", 2, 22));
+        LivingRoom->addItem(new Item("Victim's Laptop", "Oh god, the victim's a Warhammer player. Maybe he had it coming", 1));
     Garage = new Room("Garage");
-        Garage->addItem(new Item("The Victim's Car. Attempting to lift it will instantly overencumber you", "This is a car that belonged to the victim. ", 9998, 66));
+        Garage->addItem(new Item("The Victim's Car. Attempting to lift it will instantly overencumber you", "This is a car that belonged to the victim. ", 9998));
     SubmissionRoom = new Room("SubmissionRoom");
 
 //             (N, E, S, W)

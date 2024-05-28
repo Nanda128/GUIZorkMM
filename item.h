@@ -16,11 +16,10 @@ private:
     string description;
     string longDescription;
     Weight weight;
-    float value;
 
 public:
     Item();
-    Item(string description, string longDescription, int weightGrams, float value);
+    Item(string description, string longDescription, int weightGrams);
     Item(string description);
     string getShortDescription();
     bool operator==(Item &i);
@@ -29,8 +28,6 @@ public:
     float getWeightfloat();
     void setWeight(int inWeightGrams);
     void setWeight(float inWeightGrams);
-    float getValue();
-    void setValue(float inValue);
     Item(string description, int weight) {
         this->description = description;
         this->weight.intValue = weight;

@@ -25,11 +25,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     printCharacterStats();
 }
 
-MainWindow::~MainWindow()
-{
-    delete ui;
-}
-
 void MainWindow::on_southButton_clicked()
 {
     goRoom("south");
@@ -100,7 +95,7 @@ void MainWindow::on_selectSuspect2_clicked(){
 }
 
 void MainWindow::on_multipleButton_clicked(){
-    MultipleInherit multipleInherit("placeholder", "placeholder", "placeholder", 1, 2.0);
+    MultipleInherit multipleInherit("placeholder", "placeholder", "placeholder", 1);
     multipleInherit.demonstrateMultipleInheritance();
 }
 
@@ -166,7 +161,7 @@ void MainWindow::addItemsToListWidget(vector<Item> items)
     }
 }
 
-void MainWindow::endGameState(string message1, string message2)
+void MainWindow::endGameState(string message1, string WonOrLost)
 {
     ui->southButton->setEnabled(false);
     ui->westButton->setEnabled(false);
@@ -181,24 +176,24 @@ void MainWindow::endGameState(string message1, string message2)
     ui->listWidget->setEnabled(false);
     ui->selectSuspect1->setEnabled(false);
     ui->selectSuspect2->setEnabled(false);
-    ui->mainConsole->setText(QString::fromStdString(character.description + " has " + message1 + ". You have " + message2 + " the game.\n"));
-
-    if(message2=="won")
-    {throw gameException(character.description + " has " + message1 + ". You have won the game.\n");
-    }
-    else if(message2=="lost")
-    {throw gameException(character.description + " has " + message1 + ". You have lost the game.\n");
-    }
 
     character.stamina = 0;
     ui->staminaDisplay->setText(QString::fromStdString(displayStamina()));
+
+    if(WonOrLost=="won") {
+        cleanupResources();
+        throw gameException(character.description + " has " + message1 + ". You have won the game.\n");
+    } else if(WonOrLost=="lost") {
+        cleanupResources();
+        throw gameException(character.description + " has " + message1 + ". You have lost the game.\n");
+    }
 }
 
 void MainWindow::overencumberedTest()
 {
     if (character.isOverencumbered(10.0))
     {
-        endGameState("been overencumberd", "lost");
+        endGameState("been overencumbered", "lost");
     }
 }
 
@@ -266,4 +261,17 @@ void MainWindow::printCharacterStats()
     {
         ui->staminaDisplay->setText(QString::fromStdString(displayStamina()));
     }
+}
+
+void MainWindow::cleanupResources() {
+    delete zork;
+    zork = nullptr;
+    delete ui;
+    ui = nullptr;
+}
+
+MainWindow::~MainWindow()
+{
+    delete zork;
+    delete ui;
 }

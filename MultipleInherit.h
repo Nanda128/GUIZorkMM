@@ -6,9 +6,9 @@
 
 class MultipleInherit : public Character, public Item {
 public:
-    MultipleInherit(string characterDescription, string itemDescription, string itemLongDescription, int itemWeightGrams, float itemValue) :
+    MultipleInherit(string characterDescription, string itemDescription, string itemLongDescription, int itemWeightGrams) :
     Character(characterDescription),
-    Item(itemDescription, itemLongDescription, itemWeightGrams, itemValue) {}
+    Item(itemDescription, itemLongDescription, itemWeightGrams) {}
     void demonstrateMultipleInheritance();
 };
 
