@@ -24,8 +24,8 @@ public:
     string getShortDescription();
     bool operator==(Item &i);
     string getLongDescription();
-    int getWeight();
-    float getWeightfloat();
+    int getWeight() const;
+    float getWeightfloat() const;
     void setWeight(int inWeightGrams);
     void setWeight(float inWeightGrams);
     Item(string description, int weight) {

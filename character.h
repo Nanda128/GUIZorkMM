@@ -20,6 +20,7 @@ private:
 public:
     Character();
     Character(string description);
+    Character(string description, std::initializer_list<Item> items); //Initializer List!
     string shortDescription();
     string longDescription();
     vector<Item> viewItems();

@@ -44,14 +44,14 @@ void Item::setWeight(float inWeightGrams)
         weight.floatValue = inWeightGrams;
 }
 
-int Item::getWeight()
-{
-    return weight.intValue;
+int Item::getWeight() const
+{   const int wt = weight.intValue;
+    return wt;
 }
 
-float Item::getWeightfloat()
-{
-    return weight.floatValue;
+float Item::getWeightfloat() const
+{   const float wt = weight.floatValue;
+    return wt;
 }
 
 string Item::getShortDescription()

@@ -6,6 +6,11 @@ Room::Room(string description)
     this->description = description;
 }
 
+Room::Room(string description, std::initializer_list<Item> items)
+    : description(description), itemsInRoom(items) {
+    this->description = description;
+}
+
 void Room::setExits(Room *north, Room *east, Room *south, Room *west)
 {
     if (north != nullptr)

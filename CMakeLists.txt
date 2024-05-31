@@ -38,7 +38,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         zorkul.h
         gameException.cpp
         gameException.h
-        RequiredFeatures.txt
+
         main.cpp
         ConstrExample.h
         ConstrExample.cpp

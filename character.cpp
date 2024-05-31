@@ -8,6 +8,13 @@ Character::Character(string description)
     stamina = 10;
 }
 
+Character::Character(string description, std::initializer_list<Item> items)
+    : description(description), itemsInCharacter(items), carriedWeight(0), stamina(10) {
+    for (const auto& item : items) {
+        carriedWeight += item.getWeight();
+    }
+}
+
 void Character::addItem(Item *item)
 {
     itemsInCharacter.push_back(*item);
@@ -124,6 +131,6 @@ void Character::decrementStamina()
 
     if (stamina < 0)
     {
-        setStamina(15);
+        setStamina(200);
     }
 }

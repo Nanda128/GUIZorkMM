@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>608</width>
+    <width>676</width>
     <height>414</height>
    </rect>
   </property>
@@ -242,6 +242,21 @@
     </property>
     <property name="text">
      <string>Demonstrate Deep and Shallow Copy Constructors (Check Terminal)</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="initListButton">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>10</y>
+      <width>61</width>
+      <height>401</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Demo
+Initializer
+List</string>
     </property>
    </widget>
   </widget>

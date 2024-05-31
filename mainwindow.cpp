@@ -103,6 +103,14 @@ void MainWindow::on_constrExamplebutton_clicked(){
     ConstrExample::driver();
 }
 
+void MainWindow::on_initListButton_clicked(){
+    Character char1("Lawyer", {Item("Eyeglasses", "Stared at too many screens as a kid", 1), Item("Notebook", "For taking notes", 1)});
+    // Using initializer_list to initialize Room
+    Room room1("Office", {Item("Desk", "A desk. No charging port", 20), Item("TV", "A large television", 15)});
+    std::cout << char1.viewCharacterInfo() << std::endl;
+    std::cout << room1.displayItems() << std::endl;
+}
+
 void MainWindow::on_listWidget_itemDoubleClicked(QListWidgetItem*item)
 {
     string description = item->text().toStdString();
