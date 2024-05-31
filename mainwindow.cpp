@@ -169,7 +169,7 @@ void MainWindow::addItemsToListWidget(vector<Item> items)
     }
 }
 
-void MainWindow::endGameState(string message1, string WonOrLost)
+void MainWindow::endGameState(string Reason, string WonOrLost)
 {
     ui->southButton->setEnabled(false);
     ui->westButton->setEnabled(false);
@@ -190,10 +190,10 @@ void MainWindow::endGameState(string message1, string WonOrLost)
 
     if(WonOrLost=="won") {
         cleanupResources();
-        throw gameException(character.description + " has " + message1 + ". You have won the game.\n");
+        throw gameException(character.description + " has " + Reason + ". You have won the game.\n");
     } else if(WonOrLost=="lost") {
         cleanupResources();
-        throw gameException(character.description + " has " + message1 + ". You have lost the game.\n");
+        throw gameException(character.description + " has " + Reason + ". You have lost the game.\n");
     }
 }
 
