@@ -3,6 +3,8 @@ LM173 ISE Block 4 C++ Project that's a GUI version of a Zork-like game.
 
 Nandakishore Vinayakrishnan - 23070854
 
+GitHub Repo Link: https://github.com/Nanda128/GUIZorkMM.git
+
 ## Instructions:
 
 When the game is first booted up, the user is presented with their stamina level, along with the possible
