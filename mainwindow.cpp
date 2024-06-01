@@ -221,7 +221,20 @@ void MainWindow::goRoom(string direction)
             ui->mainConsole->append(QString::fromStdString(zork->go(direction) + "\n"));
 
             if (zork->getCurrentRoom().description == "SubmissionRoom")
-            {   gameStatus.EndGame = true;
+            {   ui->southButton->setEnabled(false);
+                ui->westButton->setEnabled(false);
+                ui->northButton->setEnabled(false);
+                ui->eastButton->setEnabled(false);
+                ui->teleportButton->setEnabled(false);
+                ui->viewCharInfo->setEnabled(false);
+                ui->help->setEnabled(false);
+                ui->viewMap->setEnabled(false);
+                ui->viewRoomItems->setEnabled(false);
+                ui->viewCharItems->setEnabled(false);
+                ui->listWidget->setEnabled(false);
+                ui->selectSuspect1->setEnabled(false);
+                ui->selectSuspect2->setEnabled(false);
+                gameStatus.EndGame = true;
                 gameStatus.OnGoing = false;//Making sure the user doesn't activate the buttons if they're not in SubmissionRoom
                 ui->selectSuspect1->setEnabled(true);
                 ui->selectSuspect2->setEnabled(true);

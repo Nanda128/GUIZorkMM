@@ -8,10 +8,10 @@ void MultipleInherit::demonstrateMultipleInheritance() {
     Character assistant("Detective's Assistant");
 
     // Accessing methods inherited from the Item class
-    Item bathrobe("Family Heirloom", "A taxidermized haddock. Its been passed through several generations. Smells like it.", 1);
-    std::cout << "Item description: " << bathrobe.getShortDescription() << std::endl;
-    std::cout << "Item weight: " << bathrobe.getWeight() << " grams" << std::endl;
-    assistant.addItem(bathrobe);
+    Item heirloom("Family Heirloom", "A taxidermized haddock. Its been passed through several generations. Smells like it.", 1);
+    std::cout << "Item description: " << heirloom.getShortDescription() << std::endl;
+    std::cout << "Item weight: " << heirloom.getWeight() << " grams" << std::endl;
+    assistant.addItem(heirloom);
 
     std::vector<Item> items = assistant.viewItems();
     std::cout << "Assistant's items: ";

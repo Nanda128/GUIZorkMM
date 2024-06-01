@@ -29,7 +29,7 @@ inventory.
 
 The game's end states are:
 
-- When the total weight of the items being carried by the player exceeds 10g
+- When the total weight of the items being carried by the player exceeds 15g
 - If the user's stamina runs out
 - If the user selects Suspect 1 in SubmissionRoom.
 
